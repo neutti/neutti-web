@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+<h3>Error</h3>
+<h1 th:text="${status}">404</h1>
+<p th:utext="${message}">Error java.lang.NullPointerException</p>
+<p th:utext="${stacktrace}">stack</p>
+<a href="/" th:href="@{/}">Back to Home Page</a>
+<div>
+    <label>Time Stamp</label>
+    <div th:text="${timestamp}"></div>
+</div>
+<div>
+    <label>Exception name</label>
+    <div th:text="${exception}"></div>
+</div>
+<div>
+    <label>Trace</label>
+    <div th:utext="${trace}"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿---
+project:
+  base-resource-dir: classpath:/
+### 스프링 encoding
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+    multipart:
+      enabled: true
+      max-file-size: 20MB
+      max-request-size: 100MB
+
+### tomcat 서버
+server:
+  port: 8077
+  error:
+    ## 개발모드 default : naver
+    include-stacktrace: always
+    whitelabel:
+      enabled: true
+  tomcat:
+    uri-encoding: UTF-8
+
+### spring security mode 적용안함
+security:
+  basic:
+    enabled: false
