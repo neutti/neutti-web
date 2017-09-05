@@ -1,8 +1,7 @@
 group 'com.neutti'
-version '1.1.0.RELEASE'
+version '1.1.1.RELEASE'
 
 apply plugin: 'java'
-apply plugin: 'groovy'
 apply plugin: 'org.springframework.boot'
 
 sourceCompatibility = 1.8
@@ -43,14 +42,7 @@ dependencies {
     compile gradleApi()
 
 }
-class NeuttiWebframePlugin implements Plugin<Project> {
-    void apply(Project project) {
-        project.task('neuttiWebAppRun') << {
-            println "Hello from the GreetingPlugin"
-        }
-    }
-}
-task neuttiWebAppRun2(type: JavaExec, dependsOn: compileJava){
+task neuttiWebAppRun(type: JavaExec, dependsOn: compileJava){
     classpath = sourceSets.main.runtimeClasspath
     main = "com.neutti.webframe.start.NeuttiWebApplication"
     group = 'application'
