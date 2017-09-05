@@ -15,6 +15,7 @@ public class NeuttiWebframePlugin implements Plugin<Project> {
         JavaExec run = project.getTasks().create("neuttiWebAppRunTask", JavaExec.class);
         run.setDescription("Runs this project as a JVM application");
         run.setGroup("application");
+        run.setMain("com.neutti.webframe.start.NeuttiWebApplication");
         JavaPluginConvention javaPluginConvention = project.getConvention().getPlugin(JavaPluginConvention.class);
         run.setClasspath(javaPluginConvention.getSourceSets().getByName(SourceSet.MAIN_SOURCE_SET_NAME).getRuntimeClasspath());
     }
