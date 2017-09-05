@@ -41,10 +41,15 @@ dependencies {
     compile 'com.ibm.icu:icu4j:59.1'
 
 }
-class GreetingPlugin implements Plugin<Project> {
+class NeuttiWebframePlugin implements Plugin<Project> {
     void apply(Project project) {
-        project.task('hello') << {
+        project.task('neuttiWebAppRun') << {
             println "Hello from the GreetingPlugin"
         }
     }
+}
+task neuttiWebAppRun(type: JavaExec, dependsOn: compileJava){
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.neutti.webframe.start.NeuttiWebApplication"
+    group = 'application'
 }
