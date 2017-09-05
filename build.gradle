@@ -1,7 +1,8 @@
 group 'com.neutti'
-version '1.0.7.RELEASE'
+version '1.1.0.RELEASE'
 
 apply plugin: 'java'
+apply plugin: 'groovy'
 apply plugin: 'org.springframework.boot'
 
 sourceCompatibility = 1.8
@@ -39,6 +40,7 @@ dependencies {
     compile 'org.apache.poi:poi:3.16'
     compile 'com.amazonaws:aws-java-sdk-core:1.10.20'
     compile 'com.ibm.icu:icu4j:59.1'
+    compile gradleApi()
 
 }
 class NeuttiWebframePlugin implements Plugin<Project> {
@@ -48,7 +50,7 @@ class NeuttiWebframePlugin implements Plugin<Project> {
         }
     }
 }
-task neuttiWebAppRun(type: JavaExec, dependsOn: compileJava){
+task neuttiWebAppRun2(type: JavaExec, dependsOn: compileJava){
     classpath = sourceSets.main.runtimeClasspath
     main = "com.neutti.webframe.start.NeuttiWebApplication"
     group = 'application'
