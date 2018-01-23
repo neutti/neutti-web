@@ -1,7 +1,8 @@
 group 'com.neutti'
-version '1.2.1.RELEASE'
+version '1.2.2.RELEASE'
 
 apply plugin: 'java'
+apply plugin: 'maven'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
