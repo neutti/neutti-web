@@ -42,10 +42,10 @@ public class Encrypt {
 		 * @return
 		 */
 		public static String base64Encode(String str)  throws java.io.IOException {
-		    sun.misc.BASE64Encoder encoder = new sun.misc.BASE64Encoder();
-		    byte[] strByte = str.getBytes();
-		    String result = encoder.encode(strByte);
-		    return result ;
+		    //sun.misc.BASE64Encoder encoder = new sun.misc.BASE64Encoder();
+		    //byte[] strByte = str.getBytes();
+		    //String result = encoder.encode(strByte);
+		    return null;//result ;
 		}
 
 		/**
@@ -54,9 +54,9 @@ public class Encrypt {
 		 * @return
 		 */
 		public static String base64Decode(String str)  throws java.io.IOException {
-		    sun.misc.BASE64Decoder decoder = new sun.misc.BASE64Decoder();
-		    byte[] strByte = decoder.decodeBuffer(str);
-		    String result = new String(strByte);
-		    return result ;
+		    //sun.misc.BASE64Decoder decoder = new sun.misc.BASE64Decoder();
+		    //byte[] strByte = decoder.decodeBuffer(str);
+		    //String result = new String(strByte);
+		    return null;//result ;
 		}
 }
