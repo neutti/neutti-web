@@ -1,5 +1,5 @@
 group 'com.neutti'
-version '1.2.5.RELEASE'
+version '1.2.6.RELEASE'
 
 apply plugin: 'java'
 apply plugin: 'maven'
@@ -8,6 +8,10 @@ apply plugin: 'io.spring.dependency-management'
 
 jar {
     enabled = true
+}
+
+bootRun {
+    sourceResources sourceSets.main
 }
 
 sourceCompatibility = 1.8
