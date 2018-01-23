@@ -1,5 +1,5 @@
 group 'com.neutti'
-version '1.2.4.RELEASE'
+version '1.2.5.RELEASE'
 
 apply plugin: 'java'
 apply plugin: 'maven'
@@ -36,6 +36,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-aop')
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
     compile('org.springframework.boot:spring-boot-starter-jdbc')
+    compile('org.springframework.boot:spring-boot-devtools')
     runtime('com.h2database:h2')
     runtime('mysql:mysql-connector-java')
     compile("commons-dbcp:commons-dbcp:1.4")
