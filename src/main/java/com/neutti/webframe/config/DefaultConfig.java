@@ -1,11 +1,12 @@
 package com.neutti.webframe.config;
 
-import org.springframework.boot.autoconfigure.web.DefaultErrorAttributes;
-import org.springframework.boot.autoconfigure.web.ErrorAttributes;
 import org.springframework.boot.autoconfigure.web.ErrorProperties;
+import org.springframework.boot.web.servlet.error.DefaultErrorAttributes;
+import org.springframework.boot.web.servlet.error.ErrorAttributes;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.request.RequestAttributes;
+import org.springframework.web.context.request.WebRequest;
 
 import java.util.Map;
 
@@ -16,18 +17,16 @@ public class DefaultConfig {
 	public ErrorAttributes errorAttributes() {
 		return new DefaultErrorAttributes() {
 			@Override
-			public Map<String, Object> getErrorAttributes(
-					RequestAttributes requestAttributes,
-					boolean includeStackTrace) {
-				Map<String, Object> errorAttributes = super.getErrorAttributes(requestAttributes, includeStackTrace);
-				Throwable error = getError(requestAttributes);
+			public Map<String, Object> getErrorAttributes(WebRequest webRequest, boolean includeStackTrace) {
+
+				Map<String, Object> errorAttributes = super.getErrorAttributes(webRequest, includeStackTrace);
+				Throwable error = getError(webRequest);
 				if (error instanceof Exception) {
 					errorAttributes.put("errorCode", ((Exception)error).getMessage());
 					errorAttributes.put("error", error);
 				}
 				return errorAttributes;
 			}
-
 		};
 	}
 
